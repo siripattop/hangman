@@ -7,9 +7,6 @@ import java.util.concurrent.Executors;
 public abstract class Server {
 	public static final String HOST_IP_ADDRESS = "127.0.0.1"; // localhost
 
-	/**
-	 * List of protocol commands.
-	 */
 	public static final String GAME_PLAY = "PLAY";
 	public static final String GAME_STOP = "STOP";
 	public static final String GAME_OVER = "OVER";
@@ -36,21 +33,10 @@ public abstract class Server {
 		this.executors = Executors.newFixedThreadPool(Server.NTHREADS);
 	}
 
-	/**
-	 * Starts the Server!
-	 */
 	public abstract void run();
 
 	public abstract void stopServer();
 
-	/**
-	 * Handles any non-recoverable exceptions that might occur. Possibly during starting the Server.
-	 *
-	 * The Server will be shut down then.
-	 *
-	 * @param ex
-	 *            the exception that occurred
-	 */
 	protected void handleFatalException(Exception ex) {
 		ex.printStackTrace();
 		System.err.println("A fatal problem occurred. Server is shutting down now...");

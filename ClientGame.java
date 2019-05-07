@@ -5,10 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
-/**
- * Abstract Client-side game to handle common functions such as asking for user input.
- *
- */
+
 public abstract class ClientGame {
 	protected final BufferedReader consoleReader;
 	protected PrintWriter out;
@@ -24,9 +21,6 @@ public abstract class ClientGame {
 		}
 	}
 
-	/**
-	 * Initialize resources and start the Client game.
-	 */
 	public void run() {
 		System.out.println("Client-Server Hangman game is starting...");
 	}
@@ -65,14 +59,7 @@ public abstract class ClientGame {
 		}
 	}
 
-	/**
-	 * Play a Hangman game interactively.
-	 *
-	 * Show the user the encoded word and ask for letter/digit input as guess.
-	 *
-	 * @return <code>true</code> if the game is won or lost, and <code>false</code> if the server runs out of games or
-	 *         an exception occurs
-	 */
+	
 	protected abstract boolean play();
 
 	protected void draw_man(int remain){

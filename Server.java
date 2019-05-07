@@ -4,11 +4,6 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-/**
- * Abstract Server that contains communication protocol commands for the Hangman Client-Server game and other interface
- * methods to be implemented at both TCP and UDP Servers.
- *
- */
 public abstract class Server {
 	public static final String HOST_IP_ADDRESS = "127.0.0.1"; // localhost
 
@@ -24,9 +19,6 @@ public abstract class Server {
 	protected static Map<String, Integer> hangmanGames; /* HangmanWord --> NumberOfTries */
 	protected static List<String> hangmanGamesList; /* HangmanWords */
 
-	/**
-	 * Threads that will handle new Client connections.
-	 */
 	protected Executor executors;
 	private static final int NTHREADS = 6;
 

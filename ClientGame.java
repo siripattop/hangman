@@ -155,12 +155,7 @@ public abstract class ClientGame {
 		}
 	}
 
-	/**
-	 * Asks the user to input a guess character.
-	 *
-	 * @param response
-	 *            the returned data from the Server which is the encoded word
-	 */
+	
 	protected void askForGuess(String response) {
 		String[] tmp = response.split("@"); 
 		String word = tmp[0];
@@ -192,13 +187,7 @@ public abstract class ClientGame {
 		}
 	}
 
-	/**
-	 * The current Hangman game is over; either won or lost. Then, write the details to a file.
-	 *
-	 * @param response
-	 *            the result received from the Server
-	 *
-	 */
+	
 	protected void gameWonOrLost(String response) {
 		String won = response.substring(0, response.indexOf(":"));
 		String word = response.substring(response.indexOf(":") + 1);
@@ -207,9 +196,6 @@ public abstract class ClientGame {
 		FileUtils.printToFile(this.out, word, (won.equals("WON") ? "Yes" : "No"), this.tries);
 	}
 
-	/**
-	 * The Server has no more Hangman games. Clean up the resources then.
-	 */
 	protected void gameOver() {
 		cleanUp();
 		System.out.println("Sorry, no more games!");
@@ -221,17 +207,10 @@ public abstract class ClientGame {
 		closeConnection();
 	}
 
-	/**
-	 * Write a String message to the Server and flush the output stream to force sending the data.
-	 *
-	 * @param msg
-	 *            the data to be sent to the Server in String representation
-	 */
+	
 	protected abstract void writeToServer(String msg);
 
-	/**
-	 * Cleans up the resources for this Client app.
-	 */
+	
 	protected void cleanUp() {
 		try {
 			this.consoleReader.close();
@@ -240,11 +219,7 @@ public abstract class ClientGame {
 		}
 	}
 
-	/**
-	 * Sends to the Server that the Client no longer wants to play.
-	 *
-	 * And frees up the resources.
-	 */
+	
 	protected void stopGame() {
 		writeToServer(Server.GAME_STOP);
 		cleanUp();

@@ -78,3 +78,4 @@ Madagascar              8
 MenInBlack              8
 FastAndFirious          8
 FinalDestination        8
+Pikachu                 8

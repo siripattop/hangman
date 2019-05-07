@@ -5,10 +5,8 @@ import java.io.PrintWriter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
-//import java.util.ArrayList;
 
 public class FileUtils {
-	//private ArrayList<Character> incorrectLetters;
 	public static Map<String, Integer> getAllHangmanGames(String fileName) {
 		Map<String, Integer> list = new LinkedHashMap<String, Integer>();
 		try {

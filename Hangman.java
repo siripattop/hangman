@@ -10,13 +10,6 @@ public class Hangman {
 		this.tries = tries;
 		this.remainingTries = tries;
 	}
-
-	/**
-	 * Checks the guessed character and updates the encoded word.
-	 *
-	 * @param c
-	 *            the input character to be checked
-	 */
 	public void guess(char c) {
 		boolean ok = false;
 		StringBuilder encoded = new StringBuilder("");
@@ -30,7 +23,7 @@ public class Hangman {
 		}
 		this.encodedWord = encoded.toString();
 		if (!ok) {
-			--this.remainingTries; // wrong guess
+			--this.remainingTries;
 		}
 	}
 
@@ -58,14 +51,6 @@ public class Hangman {
 		return this.remainingTries;
 	}
 
-	/**
-	 * Returns a String with the same number of characters as the parameter word String where the characters are all
-	 * dashes.
-	 *
-	 * @param word
-	 *            the String to be encoded
-	 * @return the String representation of the encoded or dashed word
-	 */
 	private String encodeWord(String word) {
 		StringBuilder encoded = new StringBuilder("");
 		for (int i = 0; i < word.length(); i++) {

@@ -44,10 +44,10 @@ public abstract class ServerClientConnection {
 	protected void playThisGame(Hangman game) {
 		if (game.won()) {
 			writeToClient(Server.GAME_WON + ":" + game.getWord());
-			// writeToClient(String.valueOf(game.getRemainingTries()));
+			
 		} else if (game.lost()) {
 			writeToClient(Server.GAME_LOST + ":" + game.getWord());
-			// writeToClient(String.valueOf(game.getRemainingTries()));
+			
 		}
 	}
 
